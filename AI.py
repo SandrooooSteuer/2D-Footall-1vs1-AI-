@@ -1,18 +1,18 @@
-# 2D-Fußball – Zwei lernende AIs (DQN) – **5x parallel**, **Resume**, **Zuschauen**, **sicher abbrechen**
-# ======================================================================================
-# Alles in EINER Datei. Standardmäßig werden 5 Spiele gleichzeitig trainiert.
-# Du kannst jederzeit mit STRG+C abbrechen – es wird automatisch gespeichert.
-# Mit --resume kannst du später nahtlos weitermachen. Zuschauen während des Trainings mit --render-every.
+# 2D Soccer – Two Learning AIs (DQN) – **5x parallel**, **Resume**, **Watch**, **Safe Exit**
+# =========================================================================================
+# All in ONE file. By default, 5 games are trained simultaneously.
+# You can stop anytime with CTRL+C – progress will be saved automatically.
+# Use --resume to seamlessly continue training later. Watch during training with --render-every.
 #
-# Installation (einmalig):
+# Installation (one time):
 #   pip install torch pygame numpy
 #
-# Beispiele:
-#   python AI.py --episodes 1000                    # 5 parallele Spiele, trainieren und speichern
-#   python AI.py --episodes 1000 --resume           # vom letzten Stand weitertrainieren
-#   python AI.py --episodes 2000 --render-every 50  # jede 50. Episode Env #0 anzeigen
-#   python AI.py --episodes 1000 --num-envs 8       # 8 parallele Spiele
-#   python AI.py --play                              # nur zuschauen (greedy, geladene Modelle)
+# Examples:
+#   python AI.py --episodes 1000                    # 5 parallel games, train and save
+#   python AI.py --episodes 1000 --resume           # continue training from last save
+#   python AI.py --episodes 2000 --render-every 50  # show Env #0 every 50th episode
+#   python AI.py --episodes 1000 --num-envs 8       # 8 parallel games
+#   python AI.py --play                             # just watch (greedy, loaded models)(no train)
 
 import math
 import random
@@ -618,4 +618,5 @@ if __name__ == "__main__":
               buffer_capacity=args.buffer_capacity,
               goal_reward=args.goal_reward,
               shape_scale=args.shape_scale)
+
 
